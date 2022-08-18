@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Recipe!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div id="container">
+        <div id="left-col">
+            <h1>Add a New Recipe</h1>
+            <p><a href="/recipes">Back to recipes</a></p>
+            <p><a href="/user/logout">Logout</a></p>
+            <form action="/recipe/new" method="post">
+                <div id="name">
+                    <label>Name:</label>
+                    <input type="text" name="name">
+                    {% for message in get_flashed_messages(category_filter = ["error_recipe_name"]) %}
+                        {{message}}
+                    {% endfor %}
+                </div>
+                    <div id="description">
+                    <label>Description:</label>
+                    <textarea type="text" name="description"></textarea>
+                    {% for message in get_flashed_messages(category_filter = ["error_recipe_description"]) %}
+                        {{message}}
+                    {% endfor %}
+                </div>
+                <div id="instructions">
+                    <label>Instructions:</label>
+                    <textarea type="text" name="instructions"></textarea>
+                    {% for message in get_flashed_messages(category_filter = ["error_recipe_instructions"]) %}
+                        {{message}}
+                    {% endfor %}
+                </div>
+                <div id="cooked">
+                    <label>Date cooked/made:</label>
+                    <input type="date" name="cooked_date">
+                    {% for message in get_flashed_messages(category_filter = ["error_recipe_cooked_date"]) %}
+                        {{message}}
+                    {% endfor %}
+                </div>
+                <div id="under_30min">
+                    <label>Under 30 minutes?:</label>
+                    Yes: <input type="radio" name="under_30" value="1" checked>
+                    No: <input type="radio" name="under_30" value="0">
+                </div>
+                <a href=""><button type="submit">Submit</button></a>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+                
+                

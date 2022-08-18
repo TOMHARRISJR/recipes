@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+/* #reg{
+    height: 300px;
+    width: 300px;
+} */
+
+#left-col{
+    margin-left: 50px;
+    height: 200px;
+    width: 400px;
+    align-items: center;
+}
+
+#right-col{
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+    margin-left: 600px;
+    
+}
